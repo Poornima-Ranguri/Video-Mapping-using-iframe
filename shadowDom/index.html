@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Dom</title>
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+    <template>
+        <p style="color: darkcyan; font-size: 20px;">Apty’s Al-driven in-app guidance streamlines and accelerates software
+            adoption, improves onboarding, reduces IT support costs, and boosts
+            ROI with our Digital Adoption Platform</p>
+    </template>
+    <button id="showText" style="background-color: aliceblue; cursor: pointer; color:darkgray; border: none; font-size: 27px; border-radius: 10px; padding: 10px;">What is Apty ?</button>
+   
+    <div id="home"></div>
+    
+</body>
+<script>
+
+    const showText = document.getElementById("showText");
+    showText.onclick = function (){
+        
+        const template = document.querySelector("template");
+
+        const home  = document.getElementById("home").attachShadow({mode:"open"})
+        home.appendChild(template.content)
+
+    }
+
+    
+
+</script>
+</html>
